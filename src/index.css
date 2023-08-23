@@ -7,10 +7,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #151A2E;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  height: 100vh;
+  width: 100vw;
+  
+ 
+}
+
+.stats-icon {
+  height: 35px;
+  width: 35px;
 }
 
 code {
