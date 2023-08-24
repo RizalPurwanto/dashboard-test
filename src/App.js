@@ -16,6 +16,7 @@ import Navbar from "./components/Navbar";
 import TotalCostIcon from "./components/TotalCostIcon";
 import ProfitCard from "./components/ProfitCard";
 import OrdersCard from "./components/OrdersCard";
+import ActivityOverview from "./components/ActivityOverview";
 
 const Container = styled.div`
   width: 300px;
@@ -171,7 +172,14 @@ function App() {
     <div className="App">
       <body>
         <Navbar></Navbar>
-        <DashboardContainer>
+       <div style={{
+        display:'flex',
+        flexDirection:'row',
+        width:'95vw',
+        justifyContent:'flex-end',
+        
+       }}>
+       <DashboardContainer>
           <UserInfoContainer>
             <img
               style={{
@@ -244,9 +252,12 @@ function App() {
               </div>
               <div className="lowerContainer"></div>
             </div>
-            <div className="activityContainer"></div>
+            <div className="activityContainer">
+            <ActivityOverview></ActivityOverview>
+            </div>
           </div>
         </DashboardContainer>
+       </div>
       </body>
     </div>
   );

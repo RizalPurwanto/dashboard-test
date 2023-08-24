@@ -7,13 +7,14 @@ import logoutLogo from "../assets/logoutNav.png";
 import { styled } from "styled-components";
 
 const VerticalNav = styled.div`
-  height: 120vh;
+  height: 170vh;
   width: 13vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   background-color: #171e37;
   z-index: 1;
+  position:fixed;
 `;
 
 const NavContainer = styled.div`
