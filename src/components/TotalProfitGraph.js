@@ -1,9 +1,6 @@
 import { styled } from "styled-components";
-import { AiOutlineArrowUp } from "react-icons/ai";
-import { IconContext } from "react-icons/lib";
-import ActivityBullet from "./ActivityBullet";
 
-import * as Utils from "../helpers/ChartUtils";
+
 import {
   CategoryScale,
   LinearScale,
@@ -84,10 +81,6 @@ const GraphInfo = styled.div`
   color: #9f9f9f;
   display: flex;
   align-items: center;
-`;
-
-const ActivityText = styled.div`
-  display: flex;
 `;
 
 const GraphContainer = styled.div`
