@@ -10,14 +10,11 @@ import { BsFillCalendarFill } from "react-icons/bs";
 import { BiSolidWallet } from "react-icons/bi";
 import { HiChartPie } from "react-icons/hi";
 
-import interActLogo from "./assets/interActLogo.png";
-import homeLogo from "./assets/homeNav.png";
-import reportsLogo from "./assets/reportsNav.png";
-import settingsLogo from "./assets/settingsNav.png";
-import notifLogo from "./assets/notificationNav.png";
-import logoutLogo from "./assets/logoutNav.png";
 import userProfile from "./assets/userProfile.png";
 import Earnings from "./components/Earnings";
+import Navbar from "./components/Navbar";
+import TotalCostIcon from "./components/TotalCostIcon";
+import ProfitCard from "./components/ProfitCard";
 
 const Container = styled.div`
   width: 300px;
@@ -31,10 +28,6 @@ const PercentRing = styled.svg`
 const circleAnimation = keyframes`
 0% {stroke-dashoffset: 1000; }
 100% { stroke-dashoffset: 0; }
-`;
-const Circle = styled.circle`
-  animation-name: ${circleAnimation};
-  animation-duration: 8s;
 `;
 
 const TotalCostDiv = styled.div`
@@ -60,8 +53,6 @@ const StatsLabel = styled.div`
   font-weight: 700;
 `;
 
-
-
 const StatsValue = styled.div`
   color: #6c747d;
   font-size: 14px;
@@ -81,39 +72,6 @@ const StatsContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 20px;
-`;
-
-const VerticalNav = styled.div`
-  height: 120vh;
-  width: 13vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-color: #171e37;
-  z-index: 1;
-`;
-
-const NavContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  gap: 5px;
-`;
-
-const NavOption = styled.div`
-  width: 90%;
-  height: 30px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 10px;
-  align-items: center;
-  margin: 0px;
-  padding: 10px;
-  &:hover {
-    background-color: #1f2849;
-  }
 `;
 
 const DashboardContainer = styled.div`
@@ -177,79 +135,10 @@ const HeaderLine = styled.hr({
 });
 
 function App() {
-  const [orangeRingOffsetPercentage, setOrangeRingOffsetPercentage] =
-    useState(55);
-  const [greenRingOffsetPercentage, setGreenRingOffsetPercentage] =
-    useState(77);
   const [toggle, setToggle] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [earningsPeriod, setEarningsPeriod] = useState("This week");
-
-  const previousOrangePercentage = useRef(0);
-  const previousGreenPercentage = useRef(0);
-
-  let radiusOrange = 40;
-  let radiusGreen = 60;
   let radiusSmallCircle = 20;
-
   let circumferenceSmallCircle = Math.PI * 2 * radiusSmallCircle;
- 
- 
   const smallCircleOffset = ((100 - 55) / 100) * circumferenceSmallCircle;
-
-  const boxSize = 140;
-
-  useEffect(() => {
-    previousGreenPercentage.current = greenRingOffsetPercentage;
-    console.log(previousGreenPercentage, "previousGreenPercentage");
-  }, [greenRingOffsetPercentage]);
-
-  useEffect(() => {
-    previousOrangePercentage.current = orangeRingOffsetPercentage;
-    console.log(previousOrangePercentage, "previousOrangePercentage");
-  }, [orangeRingOffsetPercentage]);
-
-  
-
-
-
-  function changeValue(events) {
-    events.preventDefault();
-    if (orangeRingOffsetPercentage == 55) {
-      setOrangeRingOffsetPercentage(45);
-    } else {
-      setOrangeRingOffsetPercentage(55);
-    }
-
-    if (greenRingOffsetPercentage == 77) {
-      setGreenRingOffsetPercentage(50);
-    } else {
-      setGreenRingOffsetPercentage(77);
-    }
-  }
-
-  const navArr = [
-    {
-      name: "Home",
-      logo: homeLogo,
-    },
-    {
-      name: "Reports",
-      logo: reportsLogo,
-    },
-    {
-      name: "Notification",
-      logo: notifLogo,
-    },
-    {
-      name: "Settings",
-      logo: settingsLogo,
-    },
-    {
-      name: "Logout",
-      logo: logoutLogo,
-    },
-  ];
   const statsArr = [
     {
       label: "Total Sales",
@@ -277,59 +166,10 @@ function App() {
     },
   ];
 
-  const earningsOptions = ["This week", "2 weeks ago", "Last month"];
-
   return (
     <div className="App">
       <body>
-        {/* <div>
-        Previous greenRingOffsetPercentage {previousGreenPercentage?.current}
-        
-       </div>
-       <br></br>
-       <div>
-       Previous orangeRingOffsetPercentage {previousOrangePercentage?.current}
-       </div> */}
-        <VerticalNav>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "flex-start",
-              gap: "10px",
-              alignItems: "center",
-              margin: "20px",
-              marginBottom: "70px",
-            }}
-          >
-            <img height={"30px"} width={"30px"} src={interActLogo}></img>
-            <div
-              style={{
-                fontWeight: 700,
-                fontSize: "16px",
-                color: "white",
-              }}
-            >
-              Inter-act
-            </div>
-          </div>
-
-          <NavContainer></NavContainer>
-          {navArr.map((el) => (
-            <NavOption>
-              <img height={"16px"} width={"16px"} src={el.logo}></img>
-              <div
-                style={{
-                  fontWeight: 500,
-                  fontSize: "16px",
-                  color: "#6c747d",
-                }}
-              >
-                {el.name}
-              </div>
-            </NavOption>
-          ))}
-        </VerticalNav>
+        <Navbar></Navbar>
         <DashboardContainer>
           <UserInfoContainer>
             <img
@@ -343,9 +183,6 @@ function App() {
 
           <HeaderLine></HeaderLine>
           <HeaderDiv>
-          
-          
-
             <HeaderTitle>Marketing Dashboard</HeaderTitle>
             <PageRoute>
               Home /<CurrentRoute>Dashboard</CurrentRoute>
@@ -353,45 +190,7 @@ function App() {
           </HeaderDiv>
           <StatsContainer>
             <StatsDiv style={{ backgroundColor: "#0BB885" }}>
-              <div>
-                <svg
-                  style={{
-                    transform: "rotate(130deg)",
-                  }}
-                  width={80}
-                  height={80}
-                  viewBox={`0 0 60 60`}
-                >
-                  <circle
-                    cx={30}
-                    cy={30}
-                    r={radiusSmallCircle - 3}
-                    fill="#48CAA3"
-                    stroke="#0BB885"
-                    strokeWidth="3px"
-                  ></circle>
-                  <circle
-                    cx={30}
-                    cy={30}
-                    r={radiusSmallCircle}
-                    fill="transparent"
-                    stroke="#0BB885"
-                    strokeWidth="3px"
-                  ></circle>
-
-                  <circle
-                    cx={30}
-                    cy={30}
-                    r={radiusSmallCircle}
-                    fill="transparent"
-                    stroke="#FFFFFF"
-                    strokeDasharray={circumferenceSmallCircle}
-                    strokeDashoffset={smallCircleOffset}
-                    strokeWidth="3px"
-                    strokeLinecap="round"
-                  ></circle>
-                </svg>
-              </div>
+              <TotalCostIcon></TotalCostIcon>
 
               <LabelAndValueContainer>
                 <StatsLabel>Total Cost</StatsLabel>
@@ -415,7 +214,35 @@ function App() {
               </StatsDiv>
             ))}
           </StatsContainer>
-         <Earnings></Earnings>
+          <div
+            className="innerDashboardContainer"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <div
+              className="rightInnerDashboardContainer"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <div
+                className="upperContainer"
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "20px",
+                }}
+              >
+                <Earnings></Earnings>
+                <ProfitCard></ProfitCard>
+              </div>
+              <div className="lowerContainer"></div>
+            </div>
+            <div className="activityContainer"></div>
+          </div>
         </DashboardContainer>
       </body>
     </div>

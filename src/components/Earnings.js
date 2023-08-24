@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IconContext } from "react-icons/lib";
 import { styled } from "styled-components";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -106,6 +106,21 @@ export default function Earnings() {
     useState(77);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [earningsPeriod, setEarningsPeriod] = useState("This week");
+
+
+  const previousOrangePercentage = useRef(0);
+  const previousGreenPercentage = useRef(0);
+
+
+  useEffect(() => {
+    previousGreenPercentage.current = greenRingOffsetPercentage;
+    console.log(previousGreenPercentage, "previousGreenPercentage");
+  }, [greenRingOffsetPercentage]);
+
+  useEffect(() => {
+    previousOrangePercentage.current = orangeRingOffsetPercentage;
+    console.log(previousOrangePercentage, "previousOrangePercentage");
+  }, [orangeRingOffsetPercentage]);
 
   let radiusOrange = 40;
   let radiusGreen = 60;
