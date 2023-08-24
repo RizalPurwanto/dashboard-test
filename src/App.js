@@ -15,6 +15,7 @@ import Earnings from "./components/Earnings";
 import Navbar from "./components/Navbar";
 import TotalCostIcon from "./components/TotalCostIcon";
 import ProfitCard from "./components/ProfitCard";
+import OrdersCard from "./components/OrdersCard";
 
 const Container = styled.div`
   width: 300px;
@@ -237,6 +238,8 @@ function App() {
                 }}
               >
                 <Earnings></Earnings>
+               
+                <OrdersCard></OrdersCard>
                 <ProfitCard></ProfitCard>
               </div>
               <div className="lowerContainer"></div>

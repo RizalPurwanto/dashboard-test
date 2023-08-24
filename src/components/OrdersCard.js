@@ -1,24 +1,23 @@
-import { useRef, useState } from "react";
-import { IconContext } from "react-icons/lib";
-import { styled } from "styled-components";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import ProfitGraph from "./ProfitsGraph";
 
-const ProfitLabel = styled.div`
+import { styled } from "styled-components";
+import OrdersGraph from "./OrdersGraph";
+
+
+const OrdersLabel = styled.div`
   color: #ffffff;
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
 `;
 
-const ProfitValue = styled.div`
-  color: #0bb885;
+const OrdersValue = styled.div`
+  color: #FF814A;
   font-weight: 500;
   font-size: 29px;
   line-height: 34px;
 `;
 
-const ProfitContainer = styled.div`
+const OrdersContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,12 +42,12 @@ const LabelAndValueContainer = styled.div`
 
 export default function OrdersCard() {
   return (
-    <ProfitContainer>
+    <OrdersContainer>
       <LabelAndValueContainer>
-        <ProfitLabel>Profit</ProfitLabel>
-        <ProfitValue>8,24k</ProfitValue>
-        <ProfitGraph></ProfitGraph>
+        <OrdersLabel>Orders</OrdersLabel>
+        <OrdersValue>189k</OrdersValue>
+        <OrdersGraph></OrdersGraph>
       </LabelAndValueContainer>
-    </ProfitContainer>
+    </OrdersContainer>
   );
 }
