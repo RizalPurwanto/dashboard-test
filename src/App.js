@@ -17,6 +17,7 @@ import TotalCostIcon from "./components/TotalCostIcon";
 import ProfitCard from "./components/ProfitCard";
 import OrdersCard from "./components/OrdersCard";
 import ActivityOverview from "./components/ActivityOverview";
+import TotalProfitGraph from "./components/TotalProfitGraph";
 
 const Container = styled.div`
   width: 300px;
@@ -250,7 +251,9 @@ function App() {
                 <OrdersCard></OrdersCard>
                 <ProfitCard></ProfitCard>
               </div>
-              <div className="lowerContainer"></div>
+              <div className="lowerContainer">
+                <TotalProfitGraph></TotalProfitGraph>
+              </div>
             </div>
             <div className="activityContainer">
             <ActivityOverview></ActivityOverview>

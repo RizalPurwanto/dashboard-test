@@ -52,7 +52,7 @@ const ActivityItem = styled.div`
 const ActivityInfo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 120%;
+  width: 140%;
   margin-top: 3px;
   font-size: 14px;
   font-weight: 400;
@@ -69,27 +69,28 @@ const ActivityDate = styled.div`
 
 const ActivityText = styled.div`
 display: flex;
+gap:3px;
 `;
 
 const activityArr = [
   {
-    text: <ActivityText><strong>Nick Mark</strong> Mentioned <strong>Sara Smith</strong> In New Post</ActivityText>,
+    text: <ActivityText><strong>Nick Mark </strong>  Mentioned <strong>  Smith </strong> In New Post</ActivityText>,
     date: "11 JUL 8:10 PM",
   },
   {
-    text: <ActivityText><strong>The Post Name</strong> was removed by <strong>Nick Mark</strong></ActivityText>,
+    text: <ActivityText><strong>The Post Name </strong> was removed by <strong>Nick Mark </strong></ActivityText>,
     date: "11 JUL 9:10 PM",
   },
   {
-    text: <ActivityText><strong>Patrick Sulivan</strong> Published a New Post</ActivityText>,
+    text: <ActivityText><strong>Patrick Sulivan </strong> Published a New Post</ActivityText>,
     date: "12 JUL 10:10 PM",
   },
   {
-    text: <ActivityText><strong>240+ users</strong> have subscribed to Newsletter #1</ActivityText>,
+    text: <ActivityText><strong>240+ users </strong> have subscribed to Newsletter #1</ActivityText>,
     date: "18 JUL 19:10 PM",
   },
   {
-    text: <ActivityText><strong>The Post Name</strong> was suspended by <strong>Nick Mark</strong></ActivityText>,
+    text: <ActivityText><strong>The Post Name </strong> was suspended by <strong>Nick Mark</strong></ActivityText>,
     date: "11 JUL 9:10 PM",
   },
 ];
