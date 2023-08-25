@@ -78,7 +78,7 @@ const StatsContainer = styled.div`
 `;
 
 const DashboardContainer = styled.div`
-  height: 100%;
+  height: 120%;
 
   width: 80vw;
   display: flex;
@@ -130,18 +130,30 @@ const PageRoute = styled.div`
 `;
 
 const HeaderLine = styled.hr({
-  backgroundColor: "white",
+  backgroundColor: "#4B5259",
   width: "109%",
   marginLeft: "-30px",
   marginBottom: "20px",
   zIndex: 0,
+  borderTop:'1px'
 });
 
+const TermOfUse = styled.div(
+  {
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'flex-start',
+    gap:'20px',
+    marginBottom:'20px',
+    marginLeft:'20px',
+    color:'#8A92A6',
+    fontWeight:400,
+    fontSize:'12px'
+  }
+)
+
 function App() {
-  const [toggle, setToggle] = useState(false);
-  let radiusSmallCircle = 20;
-  let circumferenceSmallCircle = Math.PI * 2 * radiusSmallCircle;
-  const smallCircleOffset = ((100 - 55) / 100) * circumferenceSmallCircle;
+  
   const statsArr = [
     {
       label: "Total Sales",
@@ -253,13 +265,20 @@ function App() {
               </div>
               <div className="lowerContainer">
                 <TotalProfitGraph></TotalProfitGraph>
+                
               </div>
             </div>
             <div className="activityContainer">
             <ActivityOverview></ActivityOverview>
             </div>
+          
           </div>
+          <TermOfUse>
+          <div>Privacy Policy</div>
+          <div>Term of Use</div>
+        </TermOfUse>
         </DashboardContainer>
+        
        </div>
       </body>
     </div>

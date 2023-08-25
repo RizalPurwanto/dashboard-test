@@ -17,6 +17,17 @@ const VerticalNav = styled.div`
   position:fixed;
 `;
 
+const NotifCounter = styled.div`
+  background-color:#98FFE0;
+  height:18px;
+  width:18px;
+  font-weight:500;
+  font-size:12px;
+  color:#151A2E;
+  border-radius:3px;
+  margin-left:10px;
+`
+
 const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,6 +63,7 @@ export default function Navbar () {
         {
           name: "Notification",
           logo: notifLogo,
+          counter:1
         },
         {
           name: "Settings",
@@ -92,6 +104,7 @@ export default function Navbar () {
         <NavContainer></NavContainer>
         {navArr.map((el) => (
           <NavOption>
+            
             <img height={"16px"} width={"16px"} src={el.logo}></img>
             <div
               style={{
@@ -102,6 +115,9 @@ export default function Navbar () {
             >
               {el.name}
             </div>
+              {el.counter && 
+            <NotifCounter>1</NotifCounter>
+              }
           </NavOption>
         ))}
       </VerticalNav>
