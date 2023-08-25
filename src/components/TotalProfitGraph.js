@@ -6,15 +6,12 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend,
 } from "chart.js";
 
-import { Chart as ChartJS, defaults } from "chart.js";
+import { Chart as ChartJS } from "chart.js";
 
 import { Bar } from "react-chartjs-2";
 
-import { faker } from "@faker-js/faker";
-import { color } from "chart.js/helpers";
 import { IconContext } from "react-icons/lib";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
@@ -34,46 +31,10 @@ const Container = styled.div`
   padding: 20px;
 `;
 
-const ActivityListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  margin-top: 10px;
-`;
-
 const GraphTitle = styled.div`
   color: #ffffff;
   font-weight: 700;
   font-size: 18px;
-`;
-
-const ActivityStatus = styled.div`
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
-
-const ActivityItem = styled.div`
-  width: 80%;
-  height: 16%;
-  display: flex;
-`;
-
-const ActivityInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 120%;
-  margin-top: 3px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffff;
-  align-items: flex-start;
-  padding-left: 8px;
 `;
 
 const GraphInfo = styled.div`
@@ -130,18 +91,18 @@ const Graph = styled.div`
 `;
 
 const ViewReportButton = styled.div`
-color:#FFFFFF;
-margin-top:30px;
-border-radius:8px;
-display:flex;
-justify-content:center;
-align-items:center;
-  height:33px;
-  width:118px;
-  background-color:#0BB885;
-  font-size:12px;
-  font-weigth:700px;
-`
+  color: #ffffff;
+  margin-top: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33px;
+  width: 118px;
+  background-color: #0bb885;
+  font-size: 12px;
+  font-weigth: 700px;
+`;
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 const earningData = [140, 230, 300, 270, 140, 90, 210, 280, 80];
@@ -249,13 +210,13 @@ const BalanceYear = styled.div({
   borderRadius: "7px",
   fontWeight: "600",
   fontSize: "10px",
-  marginTop:'10px',
+  marginTop: "10px",
   gap: "3px",
 });
 
-const BalanceGraphContainer= styled.div({
-  marginTop:'27px'
-})
+const BalanceGraphContainer = styled.div({
+  marginTop: "27px",
+});
 
 export default function TotalProfitGraph() {
   return (
@@ -312,23 +273,22 @@ export default function TotalProfitGraph() {
             <StatsLabel>$842.98</StatsLabel>
             <StatsValue>Latest Month Balance $426.20k</StatsValue>
             <BalanceGraphContainer>
-            <svg
-              width="147"
-              height="46"
-              viewBox="0 0 147 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M1.25171 20.8822C1.25171 20.8822 8.44989 24.4199 11.2846 29.607C14.1193 34.794 17.0251 38.3716 20.2174 31.3185C23.4097 24.2655 25.1717 19.099 25.1717 19.099C25.1717 19.099 29.0775 11.5752 33.7779 18.1279C38.4784 24.6806 41.5108 29.607 41.5108 29.607C41.5108 29.607 46.1705 35.6318 50.6167 31.3185C55.0629 27.0053 57.8904 24.5454 57.8904 24.5454C57.8904 24.5454 62.7026 21.1499 64.7326 26.768C66.7626 32.3861 69.8096 40.4715 69.8096 40.4715C69.8096 40.4715 71.0895 43.0703 72.7441 44.1541C74.3986 45.238 77.4271 44.8842 79.0465 41.1462C80.6659 37.4082 86.1426 19.9018 86.1426 19.9018C86.1426 19.9018 89.6041 10.1228 91.4788 5.62758C93.3535 1.1324 98.4986 -2.4227 102.112 6.60295C105.724 15.6286 106.364 19.099 106.364 19.099C106.364 19.099 107.919 24.3189 112.499 23.7616C117.078 23.2044 117.269 25.6453 118.789 29.1547C120.31 32.6642 124.468 37.2875 124.468 37.2875C124.468 37.2875 127.829 41.3431 133.317 36.0892C138.805 30.8352 142.457 26.9627 146.004 18.6652"
-                stroke="#0BB885"
-                stroke-width="1.78706"
-                stroke-linecap="round"
-              />
-            </svg>
+              <svg
+                width="147"
+                height="46"
+                viewBox="0 0 147 46"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.25171 20.8822C1.25171 20.8822 8.44989 24.4199 11.2846 29.607C14.1193 34.794 17.0251 38.3716 20.2174 31.3185C23.4097 24.2655 25.1717 19.099 25.1717 19.099C25.1717 19.099 29.0775 11.5752 33.7779 18.1279C38.4784 24.6806 41.5108 29.607 41.5108 29.607C41.5108 29.607 46.1705 35.6318 50.6167 31.3185C55.0629 27.0053 57.8904 24.5454 57.8904 24.5454C57.8904 24.5454 62.7026 21.1499 64.7326 26.768C66.7626 32.3861 69.8096 40.4715 69.8096 40.4715C69.8096 40.4715 71.0895 43.0703 72.7441 44.1541C74.3986 45.238 77.4271 44.8842 79.0465 41.1462C80.6659 37.4082 86.1426 19.9018 86.1426 19.9018C86.1426 19.9018 89.6041 10.1228 91.4788 5.62758C93.3535 1.1324 98.4986 -2.4227 102.112 6.60295C105.724 15.6286 106.364 19.099 106.364 19.099C106.364 19.099 107.919 24.3189 112.499 23.7616C117.078 23.2044 117.269 25.6453 118.789 29.1547C120.31 32.6642 124.468 37.2875 124.468 37.2875C124.468 37.2875 127.829 41.3431 133.317 36.0892C138.805 30.8352 142.457 26.9627 146.004 18.6652"
+                  stroke="#0BB885"
+                  stroke-width="1.78706"
+                  stroke-linecap="round"
+                />
+              </svg>
             </BalanceGraphContainer>
             <ViewReportButton>View Report</ViewReportButton>
-          
           </LabelAndValueContainer>
         </InnerBalanceContainer>
       </BalanceContainer>

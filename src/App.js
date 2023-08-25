@@ -1,9 +1,6 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import styled from "@emotion/styled";
-import { useEffect, useRef, useState } from "react";
-import { useSpring, animated } from "@react-spring/web";
-import { keyframes } from "styled-components";
 import { IoMdTrophy } from "react-icons/io";
 import { IconContext } from "react-icons/lib";
 import { BsFillCalendarFill } from "react-icons/bs";
@@ -18,26 +15,6 @@ import ProfitCard from "./components/ProfitCard";
 import OrdersCard from "./components/OrdersCard";
 import ActivityOverview from "./components/ActivityOverview";
 import TotalProfitGraph from "./components/TotalProfitGraph";
-
-const Container = styled.div`
-  width: 300px;
-  height: 300px;
-`;
-const PercentRing = styled.svg`
-  height: 300px;
-  width: 300px;
-`;
-
-const circleAnimation = keyframes`
-0% {stroke-dashoffset: 1000; }
-100% { stroke-dashoffset: 0; }
-`;
-
-const TotalCostDiv = styled.div`
-  background-color: #0bb885;
-  width: 205px;
-  height: 100px;
-`;
 
 const StatsDiv = styled.div`
   background-color: #1c243f;
@@ -98,10 +75,7 @@ const UserInfoContainer = styled.div`
   margin-bottom: -10px;
 `;
 
-const UserInfo = styled.div`
-  width: 126px;
-  width: 36px;
-`;
+
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -195,6 +169,7 @@ function App() {
        <DashboardContainer>
           <UserInfoContainer>
             <img
+              alt="userInfo"
               style={{
                 marginTop: "10px",
               }}

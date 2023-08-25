@@ -89,7 +89,7 @@ export default function Navbar () {
             marginBottom: "70px",
           }}
         >
-          <img height={"30px"} width={"30px"} src={interActLogo}></img>
+          <img alt="interActLogo" height={"30px"} width={"30px"} src={interActLogo}></img>
           <div
             style={{
               fontWeight: 700,
@@ -105,7 +105,7 @@ export default function Navbar () {
         {navArr.map((el) => (
           <NavOption>
             
-            <img height={"16px"} width={"16px"} src={el.logo}></img>
+            <img  alt="navLogo" height={"16px"} width={"16px"} src={el.logo}></img>
             <div
               style={{
                 fontWeight: 500,

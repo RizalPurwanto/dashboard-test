@@ -153,21 +153,21 @@ export default function Earnings() {
   function handleChangeEarningPeriod(event, period) {
     event.preventDefault();
     
-    if (period == "This week") {
+    if (period === "This week") {
       setEarningsPeriod(period);
       setGreenRingOffsetPercentage(77);
       setOrangeRingOffsetPercentage(55);
       setIsDropdownOpen(false);
     }
 
-    if (period == "2 weeks ago") {
+    if (period === "2 weeks ago") {
       setEarningsPeriod(period);
       setGreenRingOffsetPercentage(50);
       setOrangeRingOffsetPercentage(45);
       setIsDropdownOpen(false);
     }
 
-    if (period == "Last month") {
+    if (period === "Last month") {
       setIsDropdownOpen(false);
     }
   }
@@ -305,7 +305,7 @@ export default function Earnings() {
 
           <LabelAndValueContainer>
             <EarningStatsLabel>Total Sales</EarningStatsLabel>
-            <EarningStatsValue>{earningsPeriod == "This week" ? "251k" : "165k"}</EarningStatsValue>
+            <EarningStatsValue>{earningsPeriod === "This week" ? "251k" : "165k"}</EarningStatsValue>
           </LabelAndValueContainer>
         </div>
         <div
@@ -321,7 +321,7 @@ export default function Earnings() {
 
           <LabelAndValueContainer>
             <EarningStatsLabel>Total Orders</EarningStatsLabel>
-            <EarningStatsValue>{earningsPeriod == "This week" ? "176k" : "147k"}</EarningStatsValue>
+            <EarningStatsValue>{earningsPeriod === "This week" ? "176k" : "147k"}</EarningStatsValue>
           </LabelAndValueContainer>
         </div>
       </div>
