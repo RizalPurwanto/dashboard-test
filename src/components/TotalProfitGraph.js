@@ -128,6 +128,21 @@ const Graph = styled.div`
   padding-top: 30px;
   height: 80%;
 `;
+
+const ViewReportButton = styled.div`
+color:#FFFFFF;
+margin-top:30px;
+border-radius:8px;
+display:flex;
+justify-content:center;
+align-items:center;
+  height:33px;
+  width:118px;
+  background-color:#0BB885;
+  font-size:12px;
+  font-weigth:700px;
+`
+
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 const earningData = [140, 230, 300, 270, 140, 90, 210, 280, 80];
 const expensesData = [-180, -100, -80, -200, -150, -90, -100, -95, -150];
@@ -239,7 +254,7 @@ const BalanceYear = styled.div({
 });
 
 const BalanceGraphContainer= styled.div({
-  marginTop:'18px'
+  marginTop:'27px'
 })
 
 export default function TotalProfitGraph() {
@@ -312,6 +327,7 @@ export default function TotalProfitGraph() {
               />
             </svg>
             </BalanceGraphContainer>
+            <ViewReportButton>View Report</ViewReportButton>
           
           </LabelAndValueContainer>
         </InnerBalanceContainer>
